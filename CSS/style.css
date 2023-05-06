@@ -1,0 +1,21 @@
+body {
+    background-image: url('../Képek/background.jpg'); /* Kép még nincs. Azt majd vágni kell. */
+    height: 90vh;
+    width: 100%;
+    background-size: cover;
+    background-position: top 25% right 0;
+}
+
+.img-container {
+    height: 800px;
+    width: 1200px;
+    position: relative;
+    float:left;
+}
+.responsive {
+    width: 100%;
+    height: auto;
+}
+.meret {
+    padding: 10%;
+}
