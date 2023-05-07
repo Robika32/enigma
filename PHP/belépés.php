@@ -1,3 +1,10 @@
+<?php 
+
+session_start();
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="hu">
 
@@ -13,31 +20,29 @@
 <body>
 
     <?php
+    include ("adatbazis.php");
 
-    if (isset($_POST)) {
+    if (isset($_POST['login'])) {
 
         $email = $_POST['email'];
         $password = $_POST['password'];
 
-        require_once "adatbazis.php";
-
-        $sql = "SELECT * FROM users WHERE email $email = '$email'";
+        $sql = "SELECT * FROM users WHERE email = '$email' && password = 'password'";
 
         $result = mysqli_query($conn, $sql);
-        $user = mysqli_fetch_array($result, MYSQLI_ASSOC);
+        $user = mysqli_num_rows($result);
 
-        if ($user) {
-            if (password_verify($password, $user["password"])) {
-                header("Location: profil.php");
-                die();
-            } else {
-                echo "<div class='alert alert-danger'>Jelszó nem egyezik!</div>";
-            }
-        } else {
-            echo "<div class='alert alert-danger'>email$email$email nem egyezik!</div>";
+        if ($user == 1) 
+        {
+            $_SESSION['e_mail'] = $email;
+            header('location: profil.php');
+        }
+        else{
+            echo "<script>
+                alert('A belépés sikertelen!');
+            </script>";
         }
     }
-
     ?>
 
     <div class="container">

@@ -1,4 +1,10 @@
+<?php 
+session_start();
+echo "Üdvözöljük".$_SESSION['e_mail'];
+?>
+
 <!DOCTYPE html>
+
 <html lang="hu">
 
 <head>
@@ -27,16 +33,16 @@
                     <div class="card text-center sidebar">
                         <div class="card-body">
                             <img src="../Képek/profil.png" class="rounded-circle" width="150">
-                            <h3>Felhasználó</h3>
+                            <h3>Üdvözöljük!</h3>
                             <hr>
                             <div class="mt-3">
                                 <a href="./index.php">Főoldal</a>
                                 <hr>
-                                <a href="">Hibajelentés</a>
+                                <a href="#">Hibajelentés</a>
                                 <hr>
-                                <a href="">Segítség</a>
+                                <a href="#">Segítség</a>
                                 <hr>
-                                <a href="">Kijelentkezés</a>
+                                <a href="#">Kijelentkezés</a>
                             </div>
                         </div>
                     </div>
@@ -52,7 +58,7 @@
                                     <h5>Teljes név:</h5>
                                 </div>
                                 <div class="col-md-9 text-secondary">
-                                    "Megrendelő neve"
+                                    ""
                                 </div>
                                 <hr>
                                 <div class="row">
